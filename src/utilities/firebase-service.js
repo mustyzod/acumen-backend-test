@@ -1,10 +1,8 @@
 const firebase = require("firebase/app");
 require("firebase/auth");
+require("firebase/firestore");
 
 const serviceAccount = require('../../config.json');
-const fb = firebase.initializeApp({
-    apiKey: serviceAccount.apiKey,
-    databaseURL: "https://acumentest-8621a.firebaseio.com"
-});
+const fb = firebase.initializeApp(serviceAccount);
 
 module.exports = fb;

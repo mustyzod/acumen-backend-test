@@ -15,10 +15,10 @@ const users = {
         } = req.body;
         try {
             const user = await RegistrationService.register(userData);
-            const verify = await RegistrationService.sendVerification();
-            return res.status(200).json({ status: "SUCCESS", message: `Verification token sent to ${user.user.email}`, user });
+            await RegistrationService.sendVerification();
+            return res.status(200).json({ status: "SUCCESS", message: `Verification token sent to ${user.user.email}` });
         } catch (error) {
-            return res.status(400).json({ status: 400, message: error.message });
+            return res.status(400).json({ status: 400, message: "Registration failed", errors: error.message });
         }
     },
 
@@ -30,26 +30,26 @@ const users = {
         } = req.body;
         try {
             const users = await RegistrationService.login(email, password);
-            const { user } = users;
-            const {
-                first_name,
-                last_name,
-                gender,
-                age
-            } = user;
+            // const { user } = users;
+            // const {
+            //     first_name,
+            //     last_name,
+            //     gender,
+            //     age
+            // } = user;
             return res.status(200).json({
                 status: 200,
                 message: "Successfully Logged Users",
-                user: {
-                    first_name: user.first_name,
-                    last_name: user.last_name,
-                    gender: user.gender,
-                    age: user.age
-                },
-                users
+                // user: {
+                //     first_name: user.first_name,
+                //     last_name: user.last_name,
+                //     gender: user.gender,
+                //     age: user.age
+                // },
+                // users
             });
         } catch (error) {
-            return res.status(400).json({ status: 400, message: error.message });
+            return res.status(400).json({ status: "FAILED", message: "Login failed", error: error.message });
         }
     }
 }

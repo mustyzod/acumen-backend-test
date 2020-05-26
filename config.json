@@ -1,3 +1,9 @@
 {
-    "apiKey": "AIzaSyAZAgkWMfOvw_5fZ9-rk15DXXPPMjh90IU"
+    "apiKey": "AIzaSyAZAgkWMfOvw_5fZ9-rk15DXXPPMjh90IU",
+    "authDomain": "acumentest-8621a.firebaseapp.com",
+    "databaseURL": "https://acumentest-8621a.firebaseio.com",
+    "projectId": "acumentest-8621a",
+    "storageBucket": "acumentest-8621a.appspot.com",
+    "messagingSenderId": "715990904974",
+    "appId": "1:715990904974:web:6f50c0d11e476bbfb319df"
 }

@@ -4,6 +4,6 @@ const students = require('../controllers/studentController');
 
 router.get('/list', students.list);
 router.post('/enroll', students.enroll);
-router.delete('/delete', students.delete);
+router.delete('/:id?', students.delete);
 
 module.exports = router;

@@ -5,6 +5,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/auth', require('./src/api/routes/registration'));
+app.use('/student', require('./src/api/routes/student'));
 
 const PORT = process.env.PORT || 5001
 
