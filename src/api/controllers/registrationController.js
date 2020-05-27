@@ -38,8 +38,8 @@ const users = {
             //     age
             // } = user;
             return res.status(200).json({
-                status: 200,
-                message: "Successfully Logged Users",
+                status: "SUCCESS",
+                message: "Successfully Logged User",
                 // user: {
                 //     first_name: user.first_name,
                 //     last_name: user.last_name,

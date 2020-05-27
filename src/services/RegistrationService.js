@@ -4,7 +4,7 @@ const firebase = require('../utilities/firebase-service');
 const registrationService = class RegistrationService {
 
     async register(data) {
-        const { username, password } = data;
+        const { email, password } = data;
         try {
             const user = await firebase.auth().createUserWithEmailAndPassword(email, password);
             // const currentUser = await firebase.auth().currentUser;

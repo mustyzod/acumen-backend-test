@@ -1,8 +1,6 @@
 'use strict';
 const firebase = require('../utilities/firebase-service');
-const Enrollment = require('../model/enrollment');
 const db = firebase.firestore();
-const firebaseHelper = require('firebase-functions-helper');
 
 const studentService = class StudentService {
     constructor() {
@@ -13,15 +11,20 @@ const studentService = class StudentService {
         try {
             const currentUser = await firebase.auth().currentUser;
             const collectionRef = await db.collection(this.collection);
-            const query = await collectionRef.where('student_id', '==', currentUser.uid).get();
-
+            const query = await collectionRef.where('student_id', '==', currentUser.uid);
             let result = [];
-            query.forEach(doc => {
+
+            const final = await query.get()
+                .then(result => {
+                    return result;
+                })
+            final.forEach(doc => {
                 result.push(doc.data());
             })
             return result;
         } catch (error) {
-            throw Error('Error while Creating Users')
+            throw Error(error)
+            // throw Error('Error while fetching list')
         }
     }
     //  Enroll student

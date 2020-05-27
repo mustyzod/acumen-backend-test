@@ -1,12 +1,12 @@
-const registrationService = require('../RegistrationService');
+const studentService = require('../StudentService');
 
-describe('User', () => {
-    beforeEach(() => {
+describe('Student Enrollement Service', () => {
+    beforeEach(async () => {
         // Clear all instances and calls to constructor and all methods:
-        RegistrationService = new registrationService();
+        StudentService = new studentService();
+    });
+    it('example', async () => {
+        expect(true).toEqual(true);
     });
 
-    it('Retrieves users list', () => {
-
-    });
 });
