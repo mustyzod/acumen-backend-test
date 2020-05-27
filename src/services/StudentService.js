@@ -23,8 +23,8 @@ const studentService = class StudentService {
             })
             return result;
         } catch (error) {
-            throw Error(error)
-            // throw Error('Error while fetching list')
+            // throw Error(error)
+            throw Error('Error while fetching list')
         }
     }
     //  Enroll student

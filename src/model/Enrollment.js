@@ -7,5 +7,4 @@ enrollment = {
         return added;
     }
 }
-
 module.export = enrollment;

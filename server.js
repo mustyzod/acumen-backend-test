@@ -9,7 +9,6 @@ app.use('/student', require('./src/api/routes/student'));
 
 const PORT = process.env.PORT || 5001
 
-
 app.listen(PORT, () => {
     console.log('-------------------------------');
     console.log(`Application Server Successfully running on port ${PORT}`);

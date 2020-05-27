@@ -10,6 +10,7 @@ describe('Registration Service', () => {
         const email = "mustyzod@gmail.com";
         const password = "sodruldeen";
         const recieved = await RegistrationService.login(email, password);
+
         expect(recieved.user.email).toEqual(email);
     });
 });

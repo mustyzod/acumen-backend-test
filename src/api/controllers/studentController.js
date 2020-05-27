@@ -2,6 +2,7 @@ const studentService = require('../../services/StudentService');
 const StudentService = new studentService();
 
 const users = {
+    
     //list Enrolment
     list: async (req, res) => {
         try {

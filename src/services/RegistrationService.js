@@ -11,8 +11,8 @@ const registrationService = class RegistrationService {
             // await currentUser.updateProfile(data)
             return user;
         } catch (error) {
-            throw Error(error)
-            // throw Error('Error while Creating Users')
+            // throw Error(error)
+            throw Error('Error while Creating Users')
         }
     }
 
